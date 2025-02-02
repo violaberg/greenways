@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,17 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ax6^id&mx_37&&seaziee_d!29dr!_#4h@h2z!z^0hlvocpz5g'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ocassidydev-greenways-a1rwyegoqws.ws-eu104.gitpod.io',
-                '8000-ocassidydev-greenways-y13chb6125k.ws-eu104.gitpod.io', 
-                '8000-thecarboncrus-greenways-ezzjc7q7u39.ws-eu104.gitpod.io',
-                '127.0.0.1','localhost', 'ci-greenways-a76ef9e9c4a6.herokuapp.com','8000-ocassidydev-greenways-98htto6eqpj.ws-eu104.gitpod.io/']
-
-
+ALLOWED_HOSTS = ['127.0.0.1','localhost', '.herokuapp.com',]
 
 
 # Application definition
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'greenways_app'
+    'greenways_app',
 ]
 
 MIDDLEWARE = [
