@@ -157,7 +157,6 @@ footer i:hover {
 
 /* Contact page */
 #contact-message-on-submit {
-  background-image: url('../static/images/contact-us-page-banner.png');
   background-size: cover;
   background-repeat: no-repeat;
   display: none;
